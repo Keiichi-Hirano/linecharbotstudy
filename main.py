@@ -15,6 +15,7 @@ import sys
 #from account_response import Response
 # 共通変数_辞書
 answer_y = {'はい', 'うん','そう','Yes','Y','ええ','だな','です','ええ','そだね'}
+
 #
 app = Flask(__name__)
 #from flask import current_app as app
