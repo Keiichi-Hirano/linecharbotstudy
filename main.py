@@ -55,9 +55,11 @@ def callback():
 ###############################################
 #LINEのメッセージの取得と返信内容の設定(オウム返し)
 ###############################################
-#def以下の関数を実行します。
-#reply_messageの第一引数のevent.reply_tokenは、イベントの応答に用いるトークンです。 
-#第二引数には、linebot.modelsに定義されている返信用のTextSendMessageオブジェクトを渡しています。
+#def以下の関数を実行
+# reply_messageの第一引数のevent.reply_tokenは、
+# イベントの応答に用いるトークン。
+# 第二引数には、linebot.modelsに定義されている
+# 返信用のTextSendMessageオブジェクトを渡している。
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     # text = event.message.text
