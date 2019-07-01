@@ -75,6 +75,7 @@ def handle_message(event):
     sendtext = ''
     sendtext = '「' + event.message.text + '」って言いました？' + '\n' + 'DDPのガイドラインについて確認ですか？'
     line_bot_api.reply_message(event.reply_token,TextSendMessage(text=sendtext)) #ここでオウム返しのメッセージを返す。
+    
     while ask_ddp != False:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='Loop')) #ここでオウム返しのメッセージを返す。
         sendtext = event.message.text
