@@ -12,6 +12,10 @@ from linebot.models import (
 )
 import os
 import sys
+#
+#from botsession import BotSessionInterface
+#botSessionInterface = BotSessionInterface()
+
 #from account_response import Response
 # 共通変数_辞書
 answer_y = {'はい', 'うん','そう','Yes','Y','ええ','だな','です','ええ','そだね'}
