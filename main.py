@@ -15,6 +15,7 @@ import sys
 #from account_response import Response
 # 共通変数_辞書
 answer_y = {'はい', 'うん','そう','Yes','Y','ええ','だな','です','ええ','そだね'}
+ask_ddp = True
 
 #
 app = Flask(__name__)
@@ -71,9 +72,8 @@ def handle_message(event):
 #    event.reply_token,
 #    TextSendMessage(text=os.environ[res.getResponse(event.message.text)])
 #    ) #ここでオウム返しのメッセージを返す。
-    ask_ddp = True
     sendtext = ''
-    sendtext = event.message.text + 'って言いました？' + '¥n' + 'DDPのガイドラインについて確認ですか？'
+    sendtext = event.message.text + 'って言いました？' + '\n' + 'DDPのガイドラインについて確認ですか？'
     line_bot_api.reply_message(event.reply_token,TextSendMessage(text=sendtext)) #ここでオウム返しのメッセージを返す。
     while ask_ddp != False:
         sendtext = event.message.text
