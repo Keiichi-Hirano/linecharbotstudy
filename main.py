@@ -21,6 +21,7 @@ app = Flask(__name__)
 #from flask import current_app as app
 #インスタンス生成
 #res=Response()
+
 #環境変数取得
 # LINE Developersで設定されているアクセストークンとChannel Secretをを取得し、設定します。
 YOUR_CHANNEL_ACCESS_TOKEN = os.environ["YOUR_CHANNEL_ACCESS_TOKEN"]
