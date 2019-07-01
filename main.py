@@ -73,7 +73,7 @@ def handle_message(event):
 #    ) #ここでオウム返しのメッセージを返す。
     ask_ddp = True
     sendtext = ''
-    sendtext = sendtext + 'って言いました？' + '/n' + 'DDPのガイドラインについて確認ですか？'
+    sendtext = event.message.text + 'って言いました？' + '¥n' + 'DDPのガイドラインについて確認ですか？'
     line_bot_api.reply_message(event.reply_token,TextSendMessage(text=sendtext)) #ここでオウム返しのメッセージを返す。
     while ask_ddp != False:
         sendtext = event.message.text
