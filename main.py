@@ -12,6 +12,10 @@ from linebot.models import (
 )
 import os
 import sys
+#
+#from botsession import BotSessionInterface
+#botSessionInterface = BotSessionInterface()
+
 #from account_response import Response
 # 共通変数_辞書
 answer_y = {'はい', 'うん','そう','Yes','Y','ええ','だな','です','ええ','そだね'}
@@ -72,20 +76,22 @@ def handle_message(event):
 #    event.reply_token,
 #    TextSendMessage(text=os.environ[res.getResponse(event.message.text)])
 #    ) #ここでオウム返しのメッセージを返す。
-    ask_ddp = True
+#    ask_ddp = True
     sendtext = ''
-    sendtext = sendtext + 'って言いました？' + '/n' + 'DDPのガイドラインについて確認ですか？'
-    line_bot_api.reply_message(event.reply_token,TextSendMessage(text=sendtext)) #ここでオウム返しのメッセージを返す。
-    while ask_ddp != False:
-        sendtext = event.message.text
-        if (sendtext in answer_y ):
-            sendtext = '現在工事中です。って言いました？'
-        else:
-            sendtext = 'それ以外はお答えできませんぜ？（＋＋'
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=sendtext)) #ここでオウム返しのメッセージを返す。
-        ask_ddp = False
-    else:
-        sys.exit(1)
+    sendtext = '「' + event.message.text + '」って言いました？' + '\n' + 'DDPのガイドラインについて確認ですか？'
+    line_bot_api.reply_message(event.reply_token,TextSendMessage(text=sendtext)) #ここでオウム返しのメッセージを返す。        
+#    while ask_ddp != False:
+#        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='Loop')) #ここでオウム返しのメッセージを返す。
+#        sendtext = event.message.text
+#        if (sendtext in answer_y ):
+#            sendtext = '現在工事中です。'
+#            line_bot_api.reply_message(event.reply_token,TextSendMessage(text=sendtext)) #ここでオウム返しのメッセージを返す。
+#        else:
+#            sendtext = 'それ以外はお答えできませんぜ？（＋＋'
+#            line_bot_api.reply_message(event.reply_token,TextSendMessage(text=sendtext)) #ここでオウム返しのメッセージを返す。
+#            ask_ddp = False
+#    else:
+#        sys.exit(1)
 
 # ポート番号の設定
 if __name__ == "__main__":
